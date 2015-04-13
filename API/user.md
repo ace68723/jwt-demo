@@ -10,5 +10,3 @@ Email regist flow
 Error
 1. code: EMAIL_TAKEN
 * code: INVALID_TOKEN
-
- s
