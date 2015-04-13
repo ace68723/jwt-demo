@@ -1,5 +1,6 @@
 ####register  
-Email regist flow  
+Email register flow 
+
 1. creat account
 * get uid
 * use uid to create token
@@ -7,6 +8,9 @@ Email regist flow
 * set user data
 * send token back to front end  
 
-Error
+Error  
+
 1. code: EMAIL_TAKEN
 * code: INVALID_TOKEN
+
+
