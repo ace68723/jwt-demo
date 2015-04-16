@@ -14,7 +14,7 @@ angular.module('jwtDemoApp')
     	$http.post(url,user)
     		.success(function(res) {
                 console.log(res);
-    			alert('success','ok','You are now registered');
+    			alert('success','Account Created!', 'Welcome, ' + res.email + '!');
                 authToken.setToken(res.token);
     		})
     		.error(function(err) {

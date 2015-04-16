@@ -29,7 +29,8 @@ app.post('/register',function(req,res) {
 		.then(function(token) {
 			res.status(200).send({
 				token: token,
-				loginID: loginID
+				loginID: loginID,
+				email: newUser.email
 			});
 		})
 		.catch(function(error) {

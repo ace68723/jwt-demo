@@ -12,7 +12,7 @@ angular.module('jwtDemoApp')
 
     var storage = $window.localStorage;
     var cachedToken;
-    var userToken = 'userToken'
+    var userToken = 'userToken';
     
     var authToken =  {
         setToken:function(token) {
