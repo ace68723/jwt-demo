@@ -1,6 +1,7 @@
 'use strict';
 
-angular.module('jwtDemoApp').config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider) {
+angular.module('jwtDemoApp').config(['$stateProvider','$urlRouterProvider','$httpProvider',
+	function($stateProvider,$urlRouterProvider,$httpProvider) {
 	
 	$stateProvider
 
@@ -26,8 +27,12 @@ angular.module('jwtDemoApp').config(['$stateProvider','$urlRouterProvider',funct
 		 controller:'LogoutCtrl as lc'
 	});
 
+	$httpProvider.interceptors.push('authInterceptor');
+
 
 	$urlRouterProvider.otherwise('/main');
 
 
-}]);
+}])
+
+.constant('API_URL', 'http://localhost:3000/');//api url constant
