@@ -17,11 +17,11 @@
 
             <ul class="nav navbar-nav">
                <li ui-sref-active="active"><a ui-sref="main">Home</a></li>
-                <li ng-hide="hc.isAuthenticated"ui-sref-active="active">
-                    <a ui-sref="register">Register</a>
+                <li ng-hide="hc.isAuthenticated()"ui-sref-active="active">
+                    <a ui-sref="register">Register</a><!-- evaluate these -->
                 </li>
-                <li ng-show="hc.isAuthenticated"ui-sref-active="active">
-                    <a ui-sref="login">Logout</a>
+                <li ng-show="hc.isAuthenticated()"ui-sref-active="active">
+                    <a ui-sref="logout">Logout</a>
                 </li>
                <li ui-sref-active="active"><a ng-href="#/">About</a></li>
                <li ui-sref-active="active"><a ng-href="#/">Contact</a></li>

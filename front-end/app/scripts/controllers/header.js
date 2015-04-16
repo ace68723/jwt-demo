@@ -10,6 +10,6 @@
 angular.module('jwtDemoApp')
   .controller('HeaderCtrl', function (authToken) {
     	var hc = this;
-    	hc.isAuthenticated = authToken.isAuthenticated();
+    	hc.isAuthenticated = authToken.isAuthenticated;
     	console.log(hc.isAuthenticated)
   });

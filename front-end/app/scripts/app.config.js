@@ -13,7 +13,13 @@ angular.module('jwtDemoApp').config(['$stateProvider','$urlRouterProvider',funct
 		url:'/register',
 		templateUrl:'/views/register.html',
 		controller:'RegisterCtrl as rc'
+	})
+
+	.state('logout',{
+		url:'/logout',
+		 controller:'LogoutCtrl as lc'
 	});
+
 
 	$urlRouterProvider.otherwise('/main');
 

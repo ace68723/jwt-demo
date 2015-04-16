@@ -12,20 +12,27 @@ angular.module('jwtDemoApp')
 
     var storage = $window.localStorage;
     var cachedToken;
-    return {
+    var userToken = 'userToken'
+    
+    var authToken =  {
         setToken:function(token) {
             cachedToken = token;
-            storage.setItem('userToken',token);
+            storage.setItem(userToken,token);
         },
         getToken:function() {
             if(!cachedToken){
-                cachedToken = storage.getItem('userToken');
+                cachedToken = storage.getItem(userToken);
             }
 
             return cachedToken;
         },
         isAuthenticated:function() {
-            return !!this.getToken(); //return true if getToken return something
+            return !!authToken.getToken(); //return true if getToken return something
+        },
+        removeToken: function() {
+            cachedToken = null;
+            storage.removeItem(userToken);
         }
     };
+    return authToken;
   });
