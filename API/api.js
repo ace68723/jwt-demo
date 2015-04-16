@@ -25,7 +25,7 @@ app.post('/register',function(req,res) {
 	var loginID = '1234561' 
 
 	
-	userLogin.register(loginID,newUser)
+	userLogin.register(newUser)
 		.then(function(token) {
 			res.status(200).send({
 				token: token,

@@ -9,7 +9,6 @@ var tokenGenerator = new FirebaseTokenGenerator("dgj7b8TQaGO9P629UxsGRBJBI8oZYmT
 	
 var creatAccount = function(newUser) {
 	var deferred = Q.defer();
-
 	dataRef.createUser({
 	  email    : newUser.email,
 	  password : newUser.password
