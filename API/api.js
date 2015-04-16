@@ -2,11 +2,10 @@ var Q = require('q');
 var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-var userLogin = require('./models/userLogin')
+var userLogin = require('./models/userLogin');
+var jwt = require('./models/jwt');
 
 var app = express();
-
-// dataRef.set("hello world!");
 
 
 
@@ -51,12 +50,51 @@ var jobs = [
 ];
 
 app.get('/jobs',function(req,res) {
+	
+	//check if the request has a authorization header
 	if(!req.headers.authorization){
 		return res.status(401).send({message: 'You are not authorized'})
-	}//check if the request has a authorization header
-	res.json(jobs);
+	}
+
+	
+	var token = req.headers.authorization.split(' ')[1];
+	
+	//verify token
+	jwt.decode(token).then(function(jwt_decoded) {
+
+		
+		res.json(jobs);
+
+	}).catch(function(error) {
+		
+		res.status(401).send({
+			message: 'You are not authorized'
+		});
+	})
+	
+
+
+	
 })
 
 app.listen(3000,function() {
 	console.log('api listening on 3000');
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
